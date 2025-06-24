@@ -35,7 +35,7 @@ const Header = () => {
             <span className={`text-xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-slate-900' : 'text-white'
             }`}>
-              RebusAI
+              Do Good Society
             </span>
           </div>
 

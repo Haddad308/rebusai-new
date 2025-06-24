@@ -64,10 +64,10 @@ const Contact = () => {
         {/* Platform Description */}
         <div className="bg-white rounded-2xl p-12 shadow-lg text-center mb-16">
           <h3 className="text-2xl font-bold text-slate-900 mb-6">
-            About RebusAI Platform
+            About Do Good Society Platform
           </h3>
           <p className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto">
-            RebusAI is an affordable, AI-powered, all-in-one platform designed for creators and changemakers. 
+            Do Good Society is an affordable, AI-powered, all-in-one platform designed for creators and changemakers. 
             We offer 'Done-for-You' marketing and premium services alongside our volunteer and membership platform, 
             ensuring your journey to making an impact is both seamless and effective.
           </p>

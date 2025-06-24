@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="lg:col-span-1 space-y-6">
             <div className="flex items-center space-x-2">
               <Heart className="h-8 w-8 text-blue-600" />
-              <span className="text-2xl font-bold">RebusAI</span>
+              <span className="text-2xl font-bold">Do Good Society</span>
             </div>
             <p className="text-slate-300 leading-relaxed">
               Be the spark behind real change. Your actions bring food to tables, 
@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-slate-300">
                 <Mail className="h-4 w-4" />
-                <span>hello@rebusai.com</span>
+                <span>hello@Do Good Society.com</span>
               </div>
               <div className="flex items-center space-x-3 text-slate-300">
                 <Phone className="h-4 w-4" />
@@ -172,7 +172,7 @@ const Footer = () => {
         <div className="border-t border-slate-800 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-slate-400 text-sm">
-              © 2024 RebusAI. All rights reserved.
+              © 2024 Do Good Society. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm text-slate-400">
               <span>Making real change, one action at a time ❤️</span>
