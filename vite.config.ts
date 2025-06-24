@@ -7,4 +7,12 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    rollupOptions: {
+      external: ['framer-motion', 'react', 'react-dom', 'react-router-dom'],
+    },
+  },
 });
+
+
+
