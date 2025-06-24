@@ -9,7 +9,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['framer-motion', 'react', 'react-dom', 'react-router-dom'],
+      external: ['framer-motion'],
     },
   },
 });
