@@ -9,10 +9,10 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <Hero />
-      <Services />
       <About />
+      <Header />
+      {/* <Services /> */}
       <Contact />
       <Footer />
     </div>
