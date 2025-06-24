@@ -96,88 +96,7 @@ const About = () => {
 
   return (
     <div>
-      <section id="membership" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Membership Benefits Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4">
-              $48.70/mo
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Members – Benefits That Outrun You</h2>
-            <p className="text-2xl text-slate-600 mb-8">$48.70 Save hundreds, change lives, travel cheaper.</p>
-            <div className="bg-slate-50 rounded-2xl p-8 max-w-4xl mx-auto mb-12">
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Your first $48.70 feeds a child 30 meals, channels 40% into accredited career training & subsidized
-                housing, and shares $3.50 with partner charities + volunteer travel.
-              </p>
-            </div>
-          </div>
-
-          {/* Membership Breakdown */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-slate-900 text-center mb-12">Membership Breakdown</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {membershipBreakdown.map((item, index) => (
-                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
-                    <item.icon className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h4>
-                  <p className="text-slate-700 mb-4 font-medium">{item.description}</p>
-                  <p className="text-sm text-slate-500 leading-relaxed">{item.subtitle}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* What's In It For Me Section */}
-          <div className="mb-20">
-            <h3 className="text-4xl font-bold text-slate-900 text-center mb-8">WHAT'S IN IT FOR ME?</h3>
-            <p className="text-xl text-slate-600 text-center max-w-4xl mx-auto mb-12 leading-relaxed">
-              Save money on daily life and travel while feeding children, training adults, and expanding affordable
-              housing—all through one membership or one volunteer shift.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {impactAreas.map((area, index) => (
-                <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-4">
-                    <area.icon className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">{area.title}</h4>
-                  <p className="text-slate-600 text-sm">{area.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats Section */}
-          <div className="bg-slate-50 rounded-2xl p-12 text-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <div className="text-3xl font-bold text-slate-900 mb-2">$286/yr</div>
-                <div className="text-slate-600">Avg member saved</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-slate-900 mb-2">1.8M</div>
-                <div className="text-slate-600">Meals funded</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-slate-900 mb-2">148</div>
-                <div className="text-slate-600">Families housed</div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg text-lg">
-              Become a Member
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Volunteer Section */}
+       {/* Volunteer Section */}
       <section id="volunteer" className="py-24 bg-gradient-to-br from-orange-50 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Volunteer Header */}
@@ -324,6 +243,88 @@ const About = () => {
             </button>
             <button className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-orange-50 transition-all duration-300 shadow-lg text-lg">
               Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Membership Section */}
+      <section id="membership" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Membership Benefits Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4">
+              $48.70/mo
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Members – Benefits That Outrun You</h2>
+            <p className="text-2xl text-slate-600 mb-8">$48.70 Save hundreds, change lives, travel cheaper.</p>
+            <div className="bg-slate-50 rounded-2xl p-8 max-w-4xl mx-auto mb-12">
+              <p className="text-lg text-slate-700 leading-relaxed">
+                Your first $48.70 feeds a child 30 meals, channels 40% into accredited career training & subsidized
+                housing, and shares $3.50 with partner charities + volunteer travel.
+              </p>
+            </div>
+          </div>
+
+          {/* Membership Breakdown */}
+          <div className="mb-20">
+            <h3 className="text-3xl font-bold text-slate-900 text-center mb-12">Membership Breakdown</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {membershipBreakdown.map((item, index) => (
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
+                    <item.icon className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h4 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h4>
+                  <p className="text-slate-700 mb-4 font-medium">{item.description}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed">{item.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* What's In It For Me Section */}
+          <div className="mb-20">
+            <h3 className="text-4xl font-bold text-slate-900 text-center mb-8">WHAT'S IN IT FOR ME?</h3>
+            <p className="text-xl text-slate-600 text-center max-w-4xl mx-auto mb-12 leading-relaxed">
+              Save money on daily life and travel while feeding children, training adults, and expanding affordable
+              housing—all through one membership or one volunteer shift.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {impactAreas.map((area, index) => (
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-4">
+                    <area.icon className="h-8 w-8 text-blue-600" />
+                  </div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-2">{area.title}</h4>
+                  <p className="text-slate-600 text-sm">{area.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="bg-slate-50 rounded-2xl p-12 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">$286/yr</div>
+                <div className="text-slate-600">Avg member saved</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">1.8M</div>
+                <div className="text-slate-600">Meals funded</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-slate-900 mb-2">148</div>
+                <div className="text-slate-600">Families housed</div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center mt-16">
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg text-lg">
+              Become a Member
             </button>
           </div>
         </div>
