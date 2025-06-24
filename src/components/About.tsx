@@ -11,6 +11,7 @@ import {
   Clock,
   MapPin,
 } from "lucide-react"
+import { motion } from "framer-motion"
 import image1 from "/food-bank-volunteer-1.jpg"
 import image2 from "/Forming_a_partnership_-_high-scaled.jpg"
 import image3 from "/qtq80-Eyl6T2.jpeg" 
@@ -94,30 +95,89 @@ const About = () => {
     },
   ]
 
+  // Animation variants
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+
+  const fadeInLeft = {
+    initial: { opacity: 0, x: -60 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+
+  const fadeInRight = {
+    initial: { opacity: 0, x: 60 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const scaleIn = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1 },
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+
   return (
     <div>
        {/* Volunteer Section */}
       <section id="volunteer" className="py-24 bg-gradient-to-br from-orange-50 to-pink-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Volunteer Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-orange-500 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4">
+          <motion.div 
+            className="text-center mb-16"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <motion.div 
+              className="inline-flex items-center bg-orange-500 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4"
+              variants={scaleIn}
+            >
               Volunteer
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Make a Direct Impact</h2>
-            <p className="text-2xl text-slate-600 mb-8">
+            </motion.div>
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+              variants={fadeInUp}
+            >
+              Make a Direct Impact
+            </motion.h2>
+            <motion.p 
+              className="text-2xl text-slate-600 mb-8"
+              variants={fadeInUp}
+            >
               Join our community of volunteers and see the change you create firsthand.
-            </p>
-            <div className="bg-white rounded-2xl p-8 max-w-4xl mx-auto mb-12 shadow-lg">
+            </motion.p>
+            <motion.div 
+              className="bg-white rounded-2xl p-8 max-w-4xl mx-auto mb-12 shadow-lg"
+              variants={fadeInUp}
+            >
               <p className="text-lg text-slate-700 leading-relaxed">
                 Every volunteer shift directly impacts lives in your community. Whether you have 3 hours or a full day,
                 your time creates lasting change for families in need.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Hero Image */}
-          <div className="mb-20">
+          <motion.div 
+            className="mb-20"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src={image1}
@@ -127,21 +187,40 @@ const About = () => {
                 className="w-full h-96 md:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-8 left-8 text-white">
+              <motion.div 
+                className="absolute bottom-8 left-8 text-white"
+                variants={fadeInLeft}
+              >
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">Volunteers in Action</h3>
                 <p className="text-lg opacity-90">Making a difference, one meal at a time</p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Volunteer Opportunities */}
           <div className="mb-20">
-            <h3 className="text-3xl font-bold text-slate-900 text-center mb-12">Volunteer Opportunities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.h3 
+              className="text-3xl font-bold text-slate-900 text-center mb-12"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInUp}
+            >
+              Volunteer Opportunities
+            </motion.h3>
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+            >
               {volunteerOpportunities.map((opportunity, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300"
+                  variants={fadeInUp}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
                   <div className="inline-flex items-center justify-center w-14 h-14 bg-orange-100 rounded-2xl mb-4">
                     <opportunity.icon className="h-7 w-7 text-orange-600" />
@@ -158,36 +237,44 @@ const About = () => {
                       {opportunity.location}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Partnership Section */}
-          <div className="mb-20">
+          <motion.div 
+            className="mb-20"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
+              <motion.div variants={fadeInLeft}>
                 <h3 className="text-3xl font-bold text-slate-900 mb-6">Building Partnerships for Change</h3>
                 <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                   We believe in the power of collaboration. Our partnerships with local organizations, businesses, and
                   community leaders amplify the impact of every volunteer hour and membership dollar.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-center">
+                <motion.div 
+                  className="space-y-4"
+                  variants={staggerContainer}
+                >
+                  <motion.div className="flex items-center" variants={fadeInUp}>
                     <Users className="h-6 w-6 text-orange-600 mr-3" />
                     <span className="text-slate-700">Community Organizations</span>
-                  </div>
-                  <div className="flex items-center">
+                  </motion.div>
+                  <motion.div className="flex items-center" variants={fadeInUp}>
                     <Handshake className="h-6 w-6 text-orange-600 mr-3" />
                     <span className="text-slate-700">Local Businesses</span>
-                  </div>
-                  <div className="flex items-center">
+                  </motion.div>
+                  <motion.div className="flex items-center" variants={fadeInUp}>
                     <Heart className="h-6 w-6 text-orange-600 mr-3" />
                     <span className="text-slate-700">Nonprofit Partners</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+              <motion.div className="relative" variants={fadeInRight}>
                 <img
                   src={image2}
                   alt="Partnership handshake representing collaboration"
@@ -195,31 +282,51 @@ const About = () => {
                   height={400}
                   className="rounded-2xl shadow-lg w-full h-80 object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Volunteer Impact Stats */}
-          <div className="bg-white rounded-2xl p-12 text-center shadow-lg mb-12">
-            <h3 className="text-2xl font-bold text-slate-900 mb-8">Volunteer Impact</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
+          <motion.div 
+            className="bg-white rounded-2xl p-12 text-center shadow-lg mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <motion.h3 
+              className="text-2xl font-bold text-slate-900 mb-8"
+              variants={fadeInUp}
+            >
+              Volunteer Impact
+            </motion.h3>
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              variants={staggerContainer}
+            >
+              <motion.div variants={scaleIn}>
                 <div className="text-3xl font-bold text-orange-600 mb-2">2,400+</div>
                 <div className="text-slate-600">Volunteer Hours</div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={scaleIn}>
                 <div className="text-3xl font-bold text-orange-600 mb-2">850</div>
                 <div className="text-slate-600">Active Volunteers</div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={scaleIn}>
                 <div className="text-3xl font-bold text-orange-600 mb-2">45</div>
                 <div className="text-slate-600">Community Partners</div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
           {/* Inspirational Image */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-12">
+          <motion.div 
+            className="relative rounded-3xl overflow-hidden shadow-2xl mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
             <img
               src={image3}
               alt="Peaceful sunset over water representing hope and community"
@@ -228,23 +335,40 @@ const About = () => {
               className="w-full h-64 md:h-80 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div 
+              className="absolute inset-0 flex items-center justify-center"
+              variants={fadeInUp}
+            >
               <div className="text-center text-white">
                 <h3 className="text-3xl md:text-4xl font-bold mb-4">Together We Rise</h3>
                 <p className="text-xl opacity-90">Building stronger communities, one act of service at a time</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Volunteer CTA */}
-          <div className="text-center">
-            <button className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 hover:scale-105 shadow-lg text-lg mr-4">
+          <motion.div 
+            className="text-center"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <motion.button 
+              className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 hover:scale-105 shadow-lg text-lg mr-4"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Start Volunteering
-            </button>
-            <button className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-orange-50 transition-all duration-300 shadow-lg text-lg">
+            </motion.button>
+            <motion.button 
+              className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-orange-50 transition-all duration-300 shadow-lg text-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Learn More
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 
@@ -252,81 +376,166 @@ const About = () => {
       <section id="membership" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Membership Benefits Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4">
+          <motion.div 
+            className="text-center mb-16"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <motion.div 
+              className="inline-flex items-center bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4"
+              variants={scaleIn}
+            >
               $48.70/mo
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Members – Benefits That Outrun You</h2>
-            <p className="text-2xl text-slate-600 mb-8">$48.70 Save hundreds, change lives, travel cheaper.</p>
-            <div className="bg-slate-50 rounded-2xl p-8 max-w-4xl mx-auto mb-12">
+            </motion.div>
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+              variants={fadeInUp}
+            >
+              Members – Benefits That Outrun You
+            </motion.h2>
+            <motion.p 
+              className="text-2xl text-slate-600 mb-8"
+              variants={fadeInUp}
+            >
+              $48.70 Save hundreds, change lives, travel cheaper.
+            </motion.p>
+            <motion.div 
+              className="bg-slate-50 rounded-2xl p-8 max-w-4xl mx-auto mb-12"
+              variants={fadeInUp}
+            >
               <p className="text-lg text-slate-700 leading-relaxed">
                 Your first $48.70 feeds a child 30 meals, channels 40% into accredited career training & subsidized
                 housing, and shares $3.50 with partner charities + volunteer travel.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Membership Breakdown */}
           <div className="mb-20">
-            <h3 className="text-3xl font-bold text-slate-900 text-center mb-12">Membership Breakdown</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.h3 
+              className="text-3xl font-bold text-slate-900 text-center mb-12"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInUp}
+            >
+              Membership Breakdown
+            </motion.h3>
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+            >
               {membershipBreakdown.map((item, index) => (
-                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center">
+                <motion.div 
+                  key={index} 
+                  className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center"
+                  variants={fadeInUp}
+                  whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                >
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
                     <item.icon className="h-8 w-8 text-blue-600" />
                   </div>
                   <h4 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h4>
                   <p className="text-slate-700 mb-4 font-medium">{item.description}</p>
                   <p className="text-sm text-slate-500 leading-relaxed">{item.subtitle}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* What's In It For Me Section */}
           <div className="mb-20">
-            <h3 className="text-4xl font-bold text-slate-900 text-center mb-8">WHAT'S IN IT FOR ME?</h3>
-            <p className="text-xl text-slate-600 text-center max-w-4xl mx-auto mb-12 leading-relaxed">
+            <motion.h3 
+              className="text-4xl font-bold text-slate-900 text-center mb-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInUp}
+            >
+              WHAT'S IN IT FOR ME?
+            </motion.h3>
+            <motion.p 
+              className="text-xl text-slate-600 text-center max-w-4xl mx-auto mb-12 leading-relaxed"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={fadeInUp}
+            >
               Save money on daily life and travel while feeding children, training adults, and expanding affordable
               housing—all through one membership or one volunteer shift.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            </motion.p>
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+            >
               {impactAreas.map((area, index) => (
-                <div key={index} className="text-center">
+                <motion.div 
+                  key={index} 
+                  className="text-center"
+                  variants={scaleIn}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                >
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-4">
                     <area.icon className="h-8 w-8 text-blue-600" />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900 mb-2">{area.title}</h4>
                   <p className="text-slate-600 text-sm">{area.description}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Stats Section */}
-          <div className="bg-slate-50 rounded-2xl p-12 text-center">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
+          <motion.div 
+            className="bg-slate-50 rounded-2xl p-12 text-center"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              variants={staggerContainer}
+            >
+              <motion.div variants={scaleIn}>
                 <div className="text-3xl font-bold text-slate-900 mb-2">$286/yr</div>
                 <div className="text-slate-600">Avg member saved</div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={scaleIn}>
                 <div className="text-3xl font-bold text-slate-900 mb-2">1.8M</div>
                 <div className="text-slate-600">Meals funded</div>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={scaleIn}>
                 <div className="text-3xl font-bold text-slate-900 mb-2">148</div>
                 <div className="text-slate-600">Families housed</div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
           {/* CTA Section */}
-          <div className="text-center mt-16">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg text-lg">
+          <motion.div 
+            className="text-center mt-16"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+          >
+            <motion.button 
+              className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg text-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Become a Member
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
     </div>
