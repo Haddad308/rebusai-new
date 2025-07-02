@@ -71,6 +71,11 @@ const Contact = () => {
       {/* Impact Header */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" 
+            alt="Global community impact visualization" 
+            className="w-full h-full object-cover opacity-15"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent"></div>
           <div className="absolute top-20 left-20 w-48 h-48 border border-amber-400/20 rotate-45"></div>
           <div className="absolute bottom-20 right-20 w-32 h-32 bg-amber-400/10 rotate-12"></div>
@@ -138,12 +143,106 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Community Action Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Community volunteers in action" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-slate-900/85"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              <div>
+                <div className="w-16 h-1 bg-amber-400 mb-6"></div>
+                <h2 className="text-5xl md:text-6xl font-black text-white leading-tight tracking-tight mb-6">
+                  COMMUNITY
+                  <br />
+                  <span className="text-amber-400">IN ACTION</span>
+                </h2>
+              </div>
+              
+              <p className="text-xl text-white/80 leading-relaxed font-light">
+                Our members don't just contribute financially—they roll up their sleeves and get involved. 
+                From local food banks to international development projects, our community creates change 
+                through direct action and meaningful engagement.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-white/70 leading-relaxed">
+                    <span className="text-amber-400 font-semibold">LOCAL IMPACT:</span> Monthly volunteer 
+                    opportunities in your community with verified impact tracking.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-white/70 leading-relaxed">
+                    <span className="text-amber-400 font-semibold">GLOBAL REACH:</span> International 
+                    volunteer travel programs with full support and coordination.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-white/70 leading-relaxed">
+                    <span className="text-amber-400 font-semibold">SKILL SHARING:</span> Use your professional 
+                    expertise to mentor and train others in career development programs.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                  alt="Volunteers serving food" 
+                  className="w-full h-48 object-cover border border-amber-400/20"
+                />
+                <img 
+                  src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                  alt="Community building project" 
+                  className="w-full h-48 object-cover border border-amber-400/20"
+                />
+                <img 
+                  src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                  alt="Education and training" 
+                  className="w-full h-48 object-cover border border-amber-400/20"
+                />
+                <img 
+                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                  alt="Global volunteer team" 
+                  className="w-full h-48 object-cover border border-amber-400/20"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Platform Description */}
       <section className="py-32 relative">
         <div className="absolute inset-0">
           <img 
-            src="/qtq80-Eyl6T2.jpeg" 
-            alt="Global impact visualization" 
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Technology and innovation" 
             className="w-full h-full object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-slate-900/90"></div>

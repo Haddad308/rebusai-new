@@ -68,8 +68,8 @@ const About = () => {
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
-            alt="Diverse group of people collaborating" 
+            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" 
+            alt="Diverse group of volunteers working together" 
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-900/80"></div>
@@ -160,6 +160,38 @@ const About = () => {
         </div>
       </section>
 
+      {/* Unity Section with Full-Width Image */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Diverse hands coming together in unity" 
+            className="w-full h-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0 bg-slate-900/85"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <h2 className="text-5xl md:text-6xl font-black text-white tracking-tight">
+              TOGETHER WE ARE
+              <br />
+              <span className="text-amber-400">UNSTOPPABLE</span>
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              When passionate individuals unite with a shared purpose, extraordinary change becomes inevitable. 
+              Join a community where your voice matters and your actions create lasting impact.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Impact Areas Section */}
       <section className="py-32 bg-slate-800/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -206,35 +238,100 @@ const About = () => {
         </div>
       </section>
 
-      {/* Unity Section with Full-Width Image */}
+      {/* Leadership Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
-            alt="Hands coming together in unity" 
-            className="w-full h-full object-cover opacity-25"
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2088&q=80" 
+            alt="Confident woman leader speaking" 
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-slate-900/85"></div>
+          <div className="absolute inset-0 bg-slate-900/90"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <h2 className="text-5xl md:text-6xl font-black text-white tracking-tight">
-              TOGETHER WE ARE
-              <br />
-              <span className="text-amber-400">UNSTOPPABLE</span>
-            </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              When passionate individuals unite with a shared purpose, extraordinary change becomes inevitable. 
-              Join a community where your voice matters and your actions create lasting impact.
-            </p>
-          </motion.div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              <div>
+                <div className="w-16 h-1 bg-amber-400 mb-6"></div>
+                <h2 className="text-5xl md:text-6xl font-black text-white leading-tight tracking-tight mb-6">
+                  EMPOWERING
+                  <br />
+                  <span className="text-amber-400">LEADERS</span>
+                </h2>
+              </div>
+              
+              <p className="text-xl text-white/80 leading-relaxed font-light">
+                Our community is built by leaders, for leaders. We believe that when empowered individuals 
+                come together with shared values and clear purpose, they can move mountains and transform societies.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-white/70 leading-relaxed">
+                    <span className="text-amber-400 font-semibold">LEADERSHIP DEVELOPMENT:</span> Access exclusive 
+                    training programs designed to amplify your impact and influence.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-white/70 leading-relaxed">
+                    <span className="text-amber-400 font-semibold">GLOBAL NETWORK:</span> Connect with 
+                    changemakers, entrepreneurs, and visionaries from every corner of the world.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-white/70 leading-relaxed">
+                    <span className="text-amber-400 font-semibold">RECOGNITION PLATFORM:</span> Showcase your 
+                    achievements and inspire others through our global recognition program.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-6">
+                  <img 
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" 
+                    alt="Professional woman in business setting" 
+                    className="w-full h-48 object-cover border border-amber-400/20"
+                  />
+                  <img 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                    alt="Professional man in leadership role" 
+                    className="w-full h-32 object-cover border border-amber-400/20"
+                  />
+                </div>
+                <div className="space-y-6 pt-12">
+                  <img 
+                    src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                    alt="Diverse professional team" 
+                    className="w-full h-32 object-cover border border-amber-400/20"
+                  />
+                  <img 
+                    src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                    alt="Business networking event" 
+                    className="w-full h-48 object-cover border border-amber-400/20"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -242,8 +339,8 @@ const About = () => {
       <section className="py-32 relative">
         <div className="absolute inset-0">
           <img 
-            src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
-            alt="Professional women networking" 
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2084&q=80" 
+            alt="Professional handshake partnership" 
             className="w-full h-full object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-slate-900/90"></div>

@@ -143,6 +143,11 @@ const Membership = () => {
       {/* Hero Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+            alt="Professional team collaboration" 
+            className="w-full h-full object-cover opacity-20"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent"></div>
           <div className="absolute top-20 right-20 w-64 h-64 border border-amber-400/20 rotate-45"></div>
           <div className="absolute bottom-20 left-20 w-32 h-32 bg-amber-400/10 rotate-12"></div>
@@ -179,6 +184,113 @@ const Membership = () => {
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Successful business meeting" 
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-slate-900/90"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <div className="w-16 h-1 bg-amber-400 mx-auto mb-8"></div>
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
+              SUCCESS STORIES
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Real members, real impact, real transformation
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-slate-800/50 border border-amber-400/20 p-8"
+            >
+              <div className="space-y-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                  alt="Sarah Chen, member" 
+                  className="w-20 h-20 rounded-full object-cover border-2 border-amber-400/30"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">Sarah Chen</h3>
+                  <p className="text-amber-400 text-sm mb-4">Change Leader Member</p>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    "In just 8 months, I've saved over $400 through the app while helping provide 
+                    480 meals to children. The volunteer opportunities have expanded my network 
+                    and led to a promotion at work."
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-slate-800/50 border border-amber-400/20 p-8"
+            >
+              <div className="space-y-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                  alt="Marcus Rodriguez, member" 
+                  className="w-20 h-20 rounded-full object-cover border-2 border-amber-400/30"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">Marcus Rodriguez</h3>
+                  <p className="text-amber-400 text-sm mb-4">Global Transformer Member</p>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    "The travel credits funded my volunteer trip to Guatemala where I helped 
+                    build homes. The experience was life-changing and the connections I made 
+                    have opened incredible business opportunities."
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-slate-800/50 border border-amber-400/20 p-8"
+            >
+              <div className="space-y-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                  alt="Emily Johnson, member" 
+                  className="w-20 h-20 rounded-full object-cover border-2 border-amber-400/30"
+                />
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">Emily Johnson</h3>
+                  <p className="text-amber-400 text-sm mb-4">Impact Starter Member</p>
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    "As a recent graduate, the job training funding helped me get certified 
+                    in digital marketing. I landed my dream job and now mentor other young 
+                    professionals through the platform."
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -223,7 +335,6 @@ const Membership = () => {
                 )}
 
                 <div className="space-y-8">
-                  {/* Header */}
                   <div className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-amber-400/20 to-amber-600/20 mx-auto mb-6 flex items-center justify-center group-hover:from-amber-400/30 group-hover:to-amber-600/30 transition-all duration-300">
                       <tier.icon className="h-8 w-8 text-amber-400" />
@@ -236,7 +347,6 @@ const Membership = () => {
                     </div>
                   </div>
 
-                  {/* Features */}
                   <div className="space-y-4">
                     {tier.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start space-x-3">
@@ -246,7 +356,6 @@ const Membership = () => {
                     ))}
                   </div>
 
-                  {/* CTA */}
                   <button className={`w-full py-4 font-bold text-lg tracking-wider transition-all duration-300 ${
                     tier.popular
                       ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 hover:from-amber-500 hover:to-amber-600'
