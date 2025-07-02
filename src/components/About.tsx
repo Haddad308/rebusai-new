@@ -1,545 +1,290 @@
-import {
-  DollarSign,
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Target, 
+  Users, 
+  Globe, 
+  Award,
   Utensils,
   GraduationCap,
   Home,
-  PieChart,
-  Smartphone,
-  Handshake,
-  Heart,
-  Users,
-  Clock,
-  MapPin,
-} from "lucide-react"
-import { motion } from "framer-motion"
-import image1 from "/food-bank-volunteer-1.jpg"
-import image2 from "/Forming_a_partnership_-_high-scaled.jpg"
-import image3 from "/qtq80-Eyl6T2.jpeg" 
+  Heart
+} from 'lucide-react';
 
 const About = () => {
-  const membershipBreakdown = [
-    {
-      icon: PieChart,
-      title: "Transparency",
-      description: "30 meals provided to a child (1 per day).",
-      subtitle: "40% ($19.48) goes toward job training, guaranteed job & subsidized housing",
-    },
-    {
-      icon: Smartphone,
-      title: "Sustainability",
-      description:
-        "Discount Mobile App with access to 700,000+ vendors across North America, offering 10% off (avg. is 15%) on everyday purchases.",
-      subtitle:
-        "Get travel deals guaranteed cheaper than Expedia or Booking. Join weekly—and soon daily—draws to win cruises, Disney passes, Uber credits, Airbnb stays, apparel, cosmetics, and more.",
-    },
-    {
-      icon: Handshake,
-      title: "Collaboration",
-      description:
-        "Partnering with PREIP – Philanthropic Real Estate Investors Program to provide Affordable & Subsidized Housing",
-      subtitle: "$2.50 per member to charities, $1 to volunteer travel",
-    },
-  ]
-
   const impactAreas = [
     {
-      icon: DollarSign,
-      title: "Save Money",
-      description: "Get discounts on everyday purchases and travel deals",
-    },
-    {
       icon: Utensils,
-      title: "Feed Children",
-      description: "Provide 30 meals per month to children in need",
+      title: 'FEED COMMUNITIES',
+      description: 'Providing 30 meals monthly to children in need across global communities',
+      stat: '1.8M+ MEALS'
     },
     {
       icon: GraduationCap,
-      title: "Train Adults",
-      description: "Fund job training and career development programs",
+      title: 'EMPOWER CAREERS',
+      description: 'Funding accredited job training and guaranteed employment pathways',
+      stat: '2,400+ TRAINED'
     },
     {
       icon: Home,
-      title: "Build Housing",
-      description: "Expand affordable and subsidized housing options",
-    },
-  ]
-
-  const volunteerOpportunities = [
-    {
-      icon: Utensils,
-      title: "Food Distribution",
-      description: "Help pack and distribute meals to families in need",
-      time: "4 hours",
-      location: "Local Food Banks",
-    },
-    {
-      icon: GraduationCap,
-      title: "Skills Training",
-      description: "Mentor adults in job training and career development",
-      time: "6 hours",
-      location: "Training Centers",
-    },
-    {
-      icon: Home,
-      title: "Housing Support",
-      description: "Assist with housing applications and support services",
-      time: "3 hours",
-      location: "Community Centers",
+      title: 'BUILD HOMES',
+      description: 'Expanding affordable and subsidized housing through strategic partnerships',
+      stat: '148 FAMILIES'
     },
     {
       icon: Heart,
-      title: "Community Outreach",
-      description: "Connect with families and provide ongoing support",
-      time: "5 hours",
-      location: "Various Locations",
-    },
-  ]
-
-  // Animation variants
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-
-  const fadeInLeft = {
-    initial: { opacity: 0, x: -60 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-
-  const fadeInRight = {
-    initial: { opacity: 0, x: 60 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
+      title: 'TRANSFORM LIVES',
+      description: 'Creating sustainable change through community-driven initiatives',
+      stat: '50K+ IMPACTED'
     }
-  }
+  ];
 
-  const scaleIn = {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
+  const principles = [
+    {
+      icon: Target,
+      title: 'TRANSPARENCY',
+      description: 'Every dollar tracked, every impact measured, every result shared with our global community.'
+    },
+    {
+      icon: Users,
+      title: 'COLLABORATION',
+      description: 'Partnering with leading organizations to amplify impact and create lasting change.'
+    },
+    {
+      icon: Globe,
+      title: 'SUSTAINABILITY',
+      description: 'Building systems that create ongoing value for members while transforming communities.'
+    },
+    {
+      icon: Award,
+      title: 'EXCELLENCE',
+      description: 'Delivering premium experiences that exceed expectations and drive meaningful results.'
+    }
+  ];
 
   return (
-    <div>
-       {/* Volunteer Section */}
-      <section id="volunteer" className="py-24 bg-gradient-to-br from-orange-50 to-pink-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Volunteer Header */}
-          <motion.div 
-            className="text-center mb-16"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <motion.div 
-              className="inline-flex items-center bg-orange-500 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4"
-              variants={scaleIn}
-            >
-              Volunteer
-            </motion.div>
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
-              variants={fadeInUp}
-            >
-              Make a Direct Impact
-            </motion.h2>
-            <motion.p 
-              className="text-2xl text-slate-600 mb-8"
-              variants={fadeInUp}
-            >
-              Join our community of volunteers and see the change you create firsthand.
-            </motion.p>
-            <motion.div 
-              className="bg-white rounded-2xl p-8 max-w-4xl mx-auto mb-12 shadow-lg"
-              variants={fadeInUp}
-            >
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Every volunteer shift directly impacts lives in your community. Whether you have 3 hours or a full day,
-                your time creates lasting change for families in need.
-              </p>
-            </motion.div>
-          </motion.div>
+    <div id="about" className="bg-slate-900">
+      {/* Mission Statement Section */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/food-bank-volunteer-1.jpg" 
+            alt="Community volunteers in action" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-900/80"></div>
+        </div>
 
-          {/* Hero Image */}
-          <motion.div 
-            className="mb-20"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={image1}
-                alt="Volunteers packing food for families in need"
-                width={1200}
-                height={600}
-                className="w-full h-96 md:h-[500px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <motion.div 
-                className="absolute bottom-8 left-8 text-white"
-                variants={fadeInLeft}
-              >
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">Volunteers in Action</h3>
-                <p className="text-lg opacity-90">Making a difference, one meal at a time</p>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Volunteer Opportunities */}
-          <div className="mb-20">
-            <motion.h3 
-              className="text-3xl font-bold text-slate-900 text-center mb-12"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInUp}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              Volunteer Opportunities
-            </motion.h3>
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={staggerContainer}
-            >
-              {volunteerOpportunities.map((opportunity, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow duration-300"
-                  variants={fadeInUp}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                >
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-orange-100 rounded-2xl mb-4">
-                    <opportunity.icon className="h-7 w-7 text-orange-600" />
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-3">{opportunity.title}</h4>
-                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">{opportunity.description}</p>
-                  <div className="space-y-2">
-                    <div className="flex items-center text-sm text-slate-500">
-                      <Clock className="h-4 w-4 mr-2" />
-                      {opportunity.time}
-                    </div>
-                    <div className="flex items-center text-sm text-slate-500">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      {opportunity.location}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Partnership Section */}
-          <motion.div 
-            className="mb-20"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div variants={fadeInLeft}>
-                <h3 className="text-3xl font-bold text-slate-900 mb-6">Building Partnerships for Change</h3>
-                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                  We believe in the power of collaboration. Our partnerships with local organizations, businesses, and
-                  community leaders amplify the impact of every volunteer hour and membership dollar.
+              <div className="space-y-8">
+                <div className="inline-block">
+                  <div className="w-16 h-1 bg-amber-400 mb-6"></div>
+                  <h2 className="text-5xl md:text-6xl font-black text-white leading-tight tracking-tight">
+                    WHAT IS
+                    <br />
+                    <span className="text-amber-400">DO GOOD SOCIETY</span>
+                  </h2>
+                </div>
+                
+                <p className="text-xl text-white/80 leading-relaxed font-light">
+                  We are the world's most impactful membership community, where every action creates 
+                  measurable change. Through strategic partnerships and innovative programs, we transform 
+                  individual contributions into global movements.
                 </p>
-                <motion.div 
-                  className="space-y-4"
-                  variants={staggerContainer}
-                >
-                  <motion.div className="flex items-center" variants={fadeInUp}>
-                    <Users className="h-6 w-6 text-orange-600 mr-3" />
-                    <span className="text-slate-700">Community Organizations</span>
-                  </motion.div>
-                  <motion.div className="flex items-center" variants={fadeInUp}>
-                    <Handshake className="h-6 w-6 text-orange-600 mr-3" />
-                    <span className="text-slate-700">Local Businesses</span>
-                  </motion.div>
-                  <motion.div className="flex items-center" variants={fadeInUp}>
-                    <Heart className="h-6 w-6 text-orange-600 mr-3" />
-                    <span className="text-slate-700">Nonprofit Partners</span>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-              <motion.div className="relative" variants={fadeInRight}>
-                <img
-                  src={image2}
-                  alt="Partnership handshake representing collaboration"
-                  width={600}
-                  height={400}
-                  className="rounded-2xl shadow-lg w-full h-80 object-cover"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
 
-          {/* Volunteer Impact Stats */}
-          <motion.div 
-            className="bg-white rounded-2xl p-12 text-center shadow-lg mb-12"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <motion.h3 
-              className="text-2xl font-bold text-slate-900 mb-8"
-              variants={fadeInUp}
-            >
-              Volunteer Impact
-            </motion.h3>
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              variants={staggerContainer}
-            >
-              <motion.div variants={scaleIn}>
-                <div className="text-3xl font-bold text-orange-600 mb-2">2,400+</div>
-                <div className="text-slate-600">Volunteer Hours</div>
-              </motion.div>
-              <motion.div variants={scaleIn}>
-                <div className="text-3xl font-bold text-orange-600 mb-2">850</div>
-                <div className="text-slate-600">Active Volunteers</div>
-              </motion.div>
-              <motion.div variants={scaleIn}>
-                <div className="text-3xl font-bold text-orange-600 mb-2">45</div>
-                <div className="text-slate-600">Community Partners</div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-
-          {/* Inspirational Image */}
-          <motion.div 
-            className="relative rounded-3xl overflow-hidden shadow-2xl mb-12"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <img
-              src={image3}
-              alt="Peaceful sunset over water representing hope and community"
-              width={1200}
-              height={400}
-              className="w-full h-64 md:h-80 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
-            <motion.div 
-              className="absolute inset-0 flex items-center justify-center"
-              variants={fadeInUp}
-            >
-              <div className="text-center text-white">
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">Together We Rise</h3>
-                <p className="text-xl opacity-90">Building stronger communities, one act of service at a time</p>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-white/70 leading-relaxed">
+                      <span className="text-amber-400 font-semibold">DIRECT IMPACT:</span> Every membership 
+                      dollar is tracked and allocated to specific outcomes you can see and measure.
+                    </p>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-white/70 leading-relaxed">
+                      <span className="text-amber-400 font-semibold">GLOBAL REACH:</span> Operating across 
+                      180+ communities worldwide with verified local partnerships.
+                    </p>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-white/70 leading-relaxed">
+                      <span className="text-amber-400 font-semibold">MEMBER BENEFITS:</span> Premium savings, 
+                      exclusive travel opportunities, and recognition within our elite community.
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
-          </motion.div>
 
-          {/* Volunteer CTA */}
-          <motion.div 
-            className="text-center"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-          >
-            <motion.button 
-              className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 hover:scale-105 shadow-lg text-lg mr-4"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
             >
-              Start Volunteering
-            </motion.button>
-            <motion.button 
-              className="bg-white text-orange-500 border-2 border-orange-500 px-8 py-4 rounded-full font-semibold hover:bg-orange-50 transition-all duration-300 shadow-lg text-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Learn More
-            </motion.button>
-          </motion.div>
+              <div className="bg-gradient-to-br from-amber-400/10 to-transparent p-12 border border-amber-400/20">
+                <div className="space-y-8">
+                  <h3 className="text-2xl font-bold text-white tracking-wide">IMPACT BY NUMBERS</h3>
+                  <div className="grid grid-cols-2 gap-8">
+                    <div className="text-center">
+                      <div className="text-3xl font-black text-amber-400 mb-2">$286</div>
+                      <div className="text-white/60 text-sm tracking-wider">AVG MEMBER SAVINGS</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-black text-amber-400 mb-2">850+</div>
+                      <div className="text-white/60 text-sm tracking-wider">ACTIVE VOLUNTEERS</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-black text-amber-400 mb-2">45+</div>
+                      <div className="text-white/60 text-sm tracking-wider">GLOBAL PARTNERS</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-black text-amber-400 mb-2">98%</div>
+                      <div className="text-white/60 text-sm tracking-wider">SATISFACTION RATE</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Membership Section */}
-      <section id="membership" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Membership Benefits Header */}
-          <motion.div 
-            className="text-center mb-16"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
+      {/* Impact Areas Section */}
+      <section className="py-32 bg-slate-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <motion.div 
-              className="inline-flex items-center bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-lg mb-4"
-              variants={scaleIn}
-            >
-              $48.70/mo
-            </motion.div>
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
-              variants={fadeInUp}
-            >
-              Members – Benefits That Outrun You
-            </motion.h2>
-            <motion.p 
-              className="text-2xl text-slate-600 mb-8"
-              variants={fadeInUp}
-            >
-              $48.70 Save hundreds, change lives, travel cheaper.
-            </motion.p>
-            <motion.div 
-              className="bg-slate-50 rounded-2xl p-8 max-w-4xl mx-auto mb-12"
-              variants={fadeInUp}
-            >
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Your first $48.70 feeds a child 30 meals, channels 40% into accredited career training & subsidized
-                housing, and shares $3.50 with partner charities + volunteer travel.
-              </p>
-            </motion.div>
+            <div className="w-16 h-1 bg-amber-400 mx-auto mb-8"></div>
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
+              OUR IMPACT AREAS
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+              Four pillars of transformation that define our global mission and drive measurable change
+            </p>
           </motion.div>
 
-          {/* Membership Breakdown */}
-          <div className="mb-20">
-            <motion.h3 
-              className="text-3xl font-bold text-slate-900 text-center mb-12"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInUp}
-            >
-              Membership Breakdown
-            </motion.h3>
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={staggerContainer}
-            >
-              {membershipBreakdown.map((item, index) => (
-                <motion.div 
-                  key={index} 
-                  className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center"
-                  variants={fadeInUp}
-                  whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-6">
-                    <item.icon className="h-8 w-8 text-blue-600" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {impactAreas.map((area, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group bg-slate-900/80 border border-amber-400/20 p-8 hover:border-amber-400/40 transition-all duration-500"
+              >
+                <div className="space-y-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-amber-400/20 to-amber-600/20 flex items-center justify-center group-hover:from-amber-400/30 group-hover:to-amber-600/30 transition-all duration-300">
+                    <area.icon className="h-8 w-8 text-amber-400" />
                   </div>
-                  <h4 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h4>
-                  <p className="text-slate-700 mb-4 font-medium">{item.description}</p>
-                  <p className="text-sm text-slate-500 leading-relaxed">{item.subtitle}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* What's In It For Me Section */}
-          <div className="mb-20">
-            <motion.h3 
-              className="text-4xl font-bold text-slate-900 text-center mb-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInUp}
-            >
-              WHAT'S IN IT FOR ME?
-            </motion.h3>
-            <motion.p 
-              className="text-xl text-slate-600 text-center max-w-4xl mx-auto mb-12 leading-relaxed"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeInUp}
-            >
-              Save money on daily life and travel while feeding children, training adults, and expanding affordable
-              housing—all through one membership or one volunteer shift.
-            </motion.p>
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={staggerContainer}
-            >
-              {impactAreas.map((area, index) => (
-                <motion.div 
-                  key={index} 
-                  className="text-center"
-                  variants={scaleIn}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-2xl mb-4">
-                    <area.icon className="h-8 w-8 text-blue-600" />
+                  
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-4 tracking-wide">{area.title}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed mb-6">{area.description}</p>
+                    <div className="text-amber-400 font-black text-lg tracking-wider">{area.stat}</div>
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">{area.title}</h4>
-                  <p className="text-slate-600 text-sm">{area.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
+                </div>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Stats Section */}
-          <motion.div 
-            className="bg-slate-50 rounded-2xl p-12 text-center"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
+      {/* Principles Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-0">
+          <img 
+            src="/Forming_a_partnership_-_high-scaled.jpg" 
+            alt="Partnership collaboration" 
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-slate-900/90"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              variants={staggerContainer}
-            >
-              <motion.div variants={scaleIn}>
-                <div className="text-3xl font-bold text-slate-900 mb-2">$286/yr</div>
-                <div className="text-slate-600">Avg member saved</div>
-              </motion.div>
-              <motion.div variants={scaleIn}>
-                <div className="text-3xl font-bold text-slate-900 mb-2">1.8M</div>
-                <div className="text-slate-600">Meals funded</div>
-              </motion.div>
-              <motion.div variants={scaleIn}>
-                <div className="text-3xl font-bold text-slate-900 mb-2">148</div>
-                <div className="text-slate-600">Families housed</div>
-              </motion.div>
-            </motion.div>
+            <div className="w-16 h-1 bg-amber-400 mx-auto mb-8"></div>
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 tracking-tight">
+              OUR PRINCIPLES
+            </h2>
           </motion.div>
 
-          {/* CTA Section */}
-          <motion.div 
-            className="text-center mt-16"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {principles.map((principle, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="flex space-x-6"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-400/20 to-amber-600/20 flex items-center justify-center flex-shrink-0">
+                  <principle.icon className="h-8 w-8 text-amber-400" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4 tracking-wide">{principle.title}</h3>
+                  <p className="text-white/70 leading-relaxed">{principle.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-24 bg-gradient-to-r from-amber-400/10 to-amber-600/10 border-t border-amber-400/20">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
           >
-            <motion.button 
-              className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg text-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Become a Member
-            </motion.button>
+            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+              READY TO CREATE
+              <br />
+              <span className="text-amber-400">LASTING IMPACT?</span>
+            </h2>
+            <p className="text-xl text-white/70 leading-relaxed">
+              Join thousands of changemakers who are transforming communities worldwide
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+              <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-12 py-4 rounded-none font-bold text-lg tracking-wider hover:from-amber-500 hover:to-amber-600 transition-all duration-300 transform hover:scale-105">
+                BECOME A MEMBER
+              </button>
+              <button className="bg-transparent border-2 border-amber-400 text-amber-400 px-12 py-4 rounded-none font-bold text-lg tracking-wider hover:bg-amber-400/10 transition-all duration-300">
+                LEARN MORE
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

@@ -14,60 +14,53 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#volunteer', label: 'Volunteer' },
-    { href: '#membership', label: 'Membership' },
-    { href: '#impact', label: 'Impact' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#home', label: 'HOME' },
+    { href: '#about', label: 'MISSION' },
+    { href: '#membership', label: 'MEMBERSHIP' },
+    { href: '#impact', label: 'IMPACT' },
+    { href: '#contact', label: 'CONTACT' },
   ];
 
   return (
-    <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+    <header className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+      isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-2xl border-b border-amber-400/20' : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Heart className={`h-8 w-8 transition-colors duration-300 ${
-              isScrolled ? 'text-blue-600' : 'text-white'
-            }`} />
-            <span className={`text-xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-slate-900' : 'text-white'
-            }`}>
-              Do Good Society
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
+              <Heart className="h-6 w-6 text-slate-900" />
+            </div>
+            <span className="text-xl font-bold text-white tracking-wide">
+              DO GOOD SOCIETY
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-12">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-all duration-300 hover:scale-105 ${
-                  isScrolled 
-                    ? 'text-slate-700 hover:text-blue-600' 
-                    : 'text-white/90 hover:text-white'
-                }`}
+                className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-all duration-300 relative group"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg">
-              Become a Member
+          <div className="hidden lg:block">
+            <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-none font-bold text-sm tracking-wider hover:from-amber-500 hover:to-amber-600 transition-all duration-300 transform hover:scale-105">
+              JOIN NOW
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden transition-colors duration-300 ${
-              isScrolled ? 'text-slate-900' : 'text-white'
-            }`}
+            className="lg:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -76,20 +69,20 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-sm rounded-lg mt-2 p-4 shadow-xl">
-            <nav className="flex flex-col space-y-4">
+          <div className="lg:hidden bg-slate-900/98 backdrop-blur-md border-t border-amber-400/20 py-6">
+            <nav className="flex flex-col space-y-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors duration-300"
+                  className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-colors duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors duration-300 mt-4">
-                Become a Member
+              <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-none font-bold text-sm tracking-wider mt-4 w-full">
+                JOIN NOW
               </button>
             </nav>
           </div>
