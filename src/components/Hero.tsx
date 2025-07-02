@@ -7,21 +7,25 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
       {/* Background Video */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="https://videos.pexels.com/video-files/3196036/3196036-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-          {/* Fallback image if video doesn't load */}
-          <img 
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
-            alt="People holding hands in unity" 
-            className="w-full h-full object-cover"
+        <div className="w-full h-full">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            style={{
+              border: 0,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }} 
+            scrolling="no" 
+            src="https://go.screenpal.com/player/cTinI5nl2fy?width=100%&height=100%&ff=1&title=0&controls=0&autoplay=1&loop=1&muted=1" 
+            allowFullScreen={true}
+            allow="autoplay; fullscreen"
           />
-        </video>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
       </div>
 
