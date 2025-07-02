@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,7 @@ const Header = () => {
   const navLinks = [
     { href: '#home', label: 'HOME' },
     { href: '#about', label: 'MISSION' },
-    { href: '#membership', label: 'MEMBERSHIP' },
+    { href: '/membership', label: 'MEMBERSHIP', isRoute: true },
     { href: '#impact', label: 'IMPACT' },
     { href: '#contact', label: 'CONTACT' },
   ];
@@ -28,34 +29,48 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
               <Heart className="h-6 w-6 text-slate-900" />
             </div>
             <span className="text-xl font-bold text-white tracking-wide">
               DO GOOD SOCIETY
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-12">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-all duration-300 relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-all duration-300 relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-all duration-300 relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              )
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-none font-bold text-sm tracking-wider hover:from-amber-500 hover:to-amber-600 transition-all duration-300 transform hover:scale-105">
+            <Link 
+              to="/membership"
+              className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-none font-bold text-sm tracking-wider hover:from-amber-500 hover:to-amber-600 transition-all duration-300 transform hover:scale-105"
+            >
               JOIN NOW
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,18 +87,33 @@ const Header = () => {
           <div className="lg:hidden bg-slate-900/98 backdrop-blur-md border-t border-amber-400/20 py-6">
             <nav className="flex flex-col space-y-6">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-white/90 hover:text-amber-400 font-medium text-sm tracking-wider transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
-              <button className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-none font-bold text-sm tracking-wider mt-4 w-full">
+              <Link 
+                to="/membership"
+                className="bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-8 py-3 rounded-none font-bold text-sm tracking-wider mt-4 w-full text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 JOIN NOW
-              </button>
+              </Link>
             </nav>
           </div>
         )}

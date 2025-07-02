@@ -68,8 +68,8 @@ const About = () => {
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="/food-bank-volunteer-1.jpg" 
-            alt="Community volunteers in action" 
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+            alt="Diverse group of people collaborating" 
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-900/80"></div>
@@ -206,12 +206,44 @@ const About = () => {
         </div>
       </section>
 
+      {/* Unity Section with Full-Width Image */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+            alt="Hands coming together in unity" 
+            className="w-full h-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0 bg-slate-900/85"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <h2 className="text-5xl md:text-6xl font-black text-white tracking-tight">
+              TOGETHER WE ARE
+              <br />
+              <span className="text-amber-400">UNSTOPPABLE</span>
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+              When passionate individuals unite with a shared purpose, extraordinary change becomes inevitable. 
+              Join a community where your voice matters and your actions create lasting impact.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Principles Section */}
       <section className="py-32 relative">
         <div className="absolute inset-0">
           <img 
-            src="/Forming_a_partnership_-_high-scaled.jpg" 
-            alt="Partnership collaboration" 
+            src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+            alt="Professional women networking" 
             className="w-full h-full object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-slate-900/90"></div>

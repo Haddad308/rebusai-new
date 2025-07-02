@@ -5,14 +5,24 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <img 
-          src="/Flow for Coupons.png" 
-          alt="Global community making change" 
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900/90"></div>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="https://videos.pexels.com/video-files/3196036/3196036-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          {/* Fallback image if video doesn't load */}
+          <img 
+            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+            alt="People holding hands in unity" 
+            className="w-full h-full object-cover"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80"></div>
       </div>
 
       {/* Geometric Accents */}
@@ -55,7 +65,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <motion.p 
-            className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed font-light tracking-wide"
+            className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light tracking-wide"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
@@ -73,12 +83,12 @@ const Hero = () => {
             transition={{ delay: 0.9, duration: 0.6 }}
           >
             <button className="group bg-gradient-to-r from-amber-400 to-amber-500 text-slate-900 px-12 py-5 rounded-none font-bold text-lg tracking-wider hover:from-amber-500 hover:to-amber-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3">
-              <span>START YOUR IMPACT</span>
+              <span>JOIN US</span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
             <button className="group bg-transparent border-2 border-white/30 text-white px-12 py-5 rounded-none font-bold text-lg tracking-wider hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-3">
               <Play className="h-5 w-5" />
-              <span>WATCH STORY</span>
+              <span>LEARN MORE</span>
             </button>
           </motion.div>
 
@@ -91,15 +101,15 @@ const Hero = () => {
           >
             <div className="text-center border-r border-amber-400/20 last:border-r-0">
               <div className="text-4xl md:text-5xl font-black text-amber-400 mb-2">50K+</div>
-              <div className="text-white/60 text-sm tracking-wider font-medium">LIVES TRANSFORMED</div>
+              <div className="text-white/70 text-sm tracking-wider font-medium">LIVES TRANSFORMED</div>
             </div>
             <div className="text-center border-r border-amber-400/20 last:border-r-0">
               <div className="text-4xl md:text-5xl font-black text-amber-400 mb-2">180+</div>
-              <div className="text-white/60 text-sm tracking-wider font-medium">GLOBAL COMMUNITIES</div>
+              <div className="text-white/70 text-sm tracking-wider font-medium">GLOBAL COMMUNITIES</div>
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-black text-amber-400 mb-2">24/7</div>
-              <div className="text-white/60 text-sm tracking-wider font-medium">IMPACT SUPPORT</div>
+              <div className="text-white/70 text-sm tracking-wider font-medium">IMPACT SUPPORT</div>
             </div>
           </motion.div>
         </motion.div>
