@@ -21,7 +21,7 @@ const Hero = () => {
               objectFit: 'cover'
             }} 
             scrolling="no" 
-            src="https://go.screenpal.com/player/cTinI5nl2fy?width=100%&height=100%&ff=1&title=0&controls=0&autoplay=1&loop=1&muted=1" 
+            src="https://www.youtube.com/embed/YY3i6uGn5tY?si=1Ck0LgfHgFAUcHzk 
             allowFullScreen={true}
             allow="autoplay; fullscreen"
           />
